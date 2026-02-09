@@ -21,7 +21,7 @@ Your job:
 
 Step 0 — Setup:
 - Create a folder called lab1/
-- Put lab1_broken.html inside it.
+- Put broken.html inside it.
 - Open the folder in VS Code.
 - Use Live Server to test as you go.
 

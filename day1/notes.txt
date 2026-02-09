@@ -50,8 +50,7 @@ Relative:
 
 
 
-- lists ordered and unordered list 
-- table - basic + styled.  
+
 
 
 
