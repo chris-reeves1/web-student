@@ -1,0 +1,81 @@
+Lab 1 — HTML Basics: Repair + Extend a Mini Site
+------------------------------------------------
+
+Outcome
+-------
+By the end of this lab you will be able to:
+- Correct broken HTML structure and improve semantic layout
+- Create a basic multi-page site (Home, About, Contact)
+- Build a valid HTML table using thead and tbody
+- Use correct relative paths for links and images
+- Apply basic accessibility practices
+
+What you start with:
+You are given one file: broken.html
+
+Your job:
+- Make the page render cleanly and consistently in 
+  the browser (no weird layout, missing content, or broken links).
+- Make the site navigable by creating the missing pages and fixing the navigation.
+- Extend the page by adding two new sections (Customers Preview + Contact).
+
+Step 0 — Setup:
+- Create a folder called lab1/
+- Put lab1_broken.html inside it.
+- Open the folder in VS Code.
+- Use Live Server to test as you go.
+
+Part 1 — Repair (use the browser + your eyes)
+- Open broken.html in the browser and do a repair pass.
+
+Rules:
+- Do not change the “theme” of the page.
+- You may rearrange elements if the structure is clearly wrong.
+- Test after each fix.
+
+Quality targets:
+- Navigation should go to real pages.
+- Image should be meaningful and accessible.
+- Table should be structured properly (header and body).
+- The page should have a sensible semantic structure.
+
+Part 2 — Extend (Add two new sections)
+After the page is repaired, add:
+- A) Customers:
+        Add a new section under “Product List” called Customers containing:
+            a short paragraph saying it is sample data
+            a 3-row table with columns:
+                Customer ID
+                Company Name
+                Country
+
+- B) Contact:
+Add a section called Contact containing:
+- an email link using mailto:
+- a phone number (plain text)
+
+Part 3 — Create missing pages:
+- Create a new page called about.html in the same folder.
+- It must:
+    - reuse the same layout structure (header + nav + main + footer)
+    - include:
+        one paragraph describing the site purpose
+        one list of 5 features
+        one image with correct alternative text
+        be linked from the nav with correct relative paths
+
+Also create contact.html (a simple page is fine for now — forms come later).
+
+Research links:
+
+HTML basics
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+
+Document and website structure
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure
+
+Tables
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics
+
+Images in HTML
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML
