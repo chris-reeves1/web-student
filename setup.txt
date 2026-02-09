@@ -1,0 +1,27 @@
+start time: 09.30
+finish: 16.00
+
+lunch 12.30 - 13.30
+
+Breaks 15 mins 11.00, 15.00
+
+Email + private/public webex
+
+Webcam on if possible. 
+
+
+Reqs:
+VsCode
+    live server extension
+Browser
+
+- 3 x JSON files
+- jquery framework
+
+Mon - html
+tues - html/css
+wed - js
+thur - js/ajax/jquery
+fri - project work  
+
+intros - where your based, tech background. 

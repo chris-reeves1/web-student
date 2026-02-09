@@ -1,0 +1,59 @@
+html:
+
+- provides us structure.
+- combine with css for styling + js for functionality.
+- Universal browser language.
+
+
+used for:
+- building the basic layout of webpages.
+- Organising media.
+- Dealing with basic user input.
+- dealing with navigation/link etc.
+
+
+Web stacks:
+
+Frontend (client-side): 
+    html, js, css, react and vue (for more complicated interface).
+
+API's communicate with the backend:
+
+backend (server-side):
+    logic, data processing, auth, 
+    python(django, fast-api, flask)
+    java(spring boot)
+    node.js (js as server + frontend)
+    php (most common, small to medium)
+
+Persistance layer:
+    - realtional(sql) - mysql, postgresql, mariadb
+    - non-relational (nosql), redis, dynamobd... 
+
+    scaling, structure. 
+
+
+LAMP - linux, Apache, MYSQL, PHP
+
+MEAN - mongodb, Express, angular, node
+MERN - mongodb, Express, react, node
+
+
+
+Absolute paths:
+- linking to other websites.
+- linking to CDN assets
+- SEO
+
+Relative:
+- local + reliable filesystem.
+
+
+
+- lists ordered and unordered list 
+- table - basic + styled.  
+
+
+
+
+
