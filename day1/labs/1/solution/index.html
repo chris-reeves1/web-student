@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop Dashboard</title>
+</head>
+
+<body>
+  <header>
+    <h1>Shop Dashboard</h1>
+    <p>Daily snapshot of products and customers.</p>
+  </header>
+
+  <nav aria-label="Primary">
+    <a href="index.html" aria-current="page">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section aria-labelledby="featured-title">
+      <h2 id="featured-title">Featured</h2>
+
+      <img
+        src="https://placehold.co/720x180/png?text=Shop+Banner"
+        alt="Shop banner image"
+        width="720"
+        height="180"
+      >
+
+      <p><strong>Notice:</strong> Prices shown exclude VAT.</p>
+    </section>
+
+    <section aria-labelledby="products-title">
+      <h2 id="products-title">Product List</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">SKU</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>P-100</td>
+            <td>Coffee Beans</td>
+            <td>£7.50</td>
+          </tr>
+          <tr>
+            <td>P-200</td>
+            <td>Tea Bags</td>
+            <td>£3.20</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        See full catalogue
+        <a href="https://example.com/catalogue">here</a>.
+      </p>
+    </section>
+
+    <section aria-labelledby="customers-title">
+      <h2 id="customers-title">Customers (Preview)</h2>
+
+      <p>This is sample data used for learning tables and structure.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Country</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>ALFKI</td>
+            <td>Alfreds Futterkiste</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>VINET</td>
+            <td>Vins et alcools Chevalier</td>
+            <td>France</td>
+          </tr>
+          <tr>
+            <td>BSBEV</td>
+            <td>B&#39;s Beverages</td>
+            <td>United Kingdom</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+
+      <p>Email: <a href="mailto:help@myshop.example">help@myshop.example</a></p>
+      <p>Phone: 01234 567 890</p>
+    </section>
+
+    <aside aria-label="Quick links">
+      <h2>Quick links</h2>
+      <ul>
+        <li><a href="about.html">About this site</a></li>
+        <li><a href="contact.html">Contact page</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2026 My Shop</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Build the three-page mini-site (index.html, about.html, contact.html) by 
+recreating the screenshots using semantic HTML (header/nav/main/footer), 
+valid boilerplate (doctype, lang, charset, viewport), and working relative 
+links between pages. 
+
+Use tables with proper structure (caption, thead, tbody, th scope="col") and a 
+contact form with correctly linked labels and basic validation. 
+
+You may choose any IDs/structure you like for Day 1/2 because this is 
+HTML/CSS practice — however we will all use the same startting code for JS labs. 
