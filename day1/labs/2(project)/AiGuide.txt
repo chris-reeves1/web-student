@@ -1,0 +1,282 @@
+Create a folder (e.g. day1-site/) and inside it create:
+
+index.html
+
+about.html
+
+contact.html
+
+2) run it
+
+Either:
+
+Right-click index.html → Open With browser, or
+
+Use VS Code Live Server (recommended) → right-click index.html → “Open with Live Server”.
+
+Part A — Boilerplate (paste this first in every page)
+
+Paste this into each HTML file, then change the <title> and page heading.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAGE TITLE HERE</title>
+</head>
+<body>
+
+</body>
+</html>
+
+Part B — Shared Header + Nav (paste into all pages)
+
+Inside <body>, paste this block at the top of each file:
+
+<header>
+  <h1>Customer Orders Dashboard</h1>
+
+  <nav aria-label="Primary">
+    <a href="index.html">Dashboard</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+3) Mark the current page (important)
+
+On each page, add aria-current="page" to the link for that page.
+
+Example: on about.html:
+
+<a href="about.html" aria-current="page">About</a>
+
+Part C — Shared Footer (paste into all pages)
+
+Paste this block at the bottom of each file (just before </body>):
+
+<footer>
+  <small>&copy; 2026 Web Fundamentals</small>
+</footer>
+
+Day 1 Page 1 — index.html (Dashboard)
+Step 1: Add a <main> container
+
+Under the header, add:
+
+<main>
+
+</main>
+
+Step 2: Controls section (search + buttons + placeholders)
+
+Inside <main>, paste:
+
+<section aria-labelledby="controls-title">
+  <h2 id="controls-title">Controls</h2>
+
+  <form action="#" method="get">
+    <label for="customerSearch">Search customers</label>
+    <input
+      type="search"
+      id="customerSearch"
+      name="q"
+      placeholder="Type a name or country…"
+      autocomplete="off"
+    >
+
+    <button type="button" id="showMoreBtn" disabled>Show more</button>
+    <button type="button" id="resetBtn" disabled>Reset selection</button>
+  </form>
+
+  <p id="customerCounter">Counter: (will be set by JavaScript)</p>
+
+  <p id="statusMessage" role="status" aria-live="polite">
+    Status: Ready
+  </p>
+</section>
+
+
+Note: The IDs above are helpful later, but if you’re standardising to your baseline on Day 3 anyway, they are not “required” today. (I’d still keep them: it’s good practice.)
+
+Step 3: Customers table section
+
+Under the controls section, paste:
+
+<section aria-labelledby="customers-title">
+  <h2 id="customers-title">Customers</h2>
+
+  <p>
+    Select a customer to view their orders.
+    <strong id="selectedCustomerLabel">Selected customer: none</strong>
+  </p>
+
+  <table id="customersTable">
+    <caption>Customer list</caption>
+    <thead>
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody id="customersTbody">
+      <tr>
+        <td>CUST-001</td>
+        <td>Acme Trading</td>
+        <td>United Kingdom</td>
+      </tr>
+      <tr>
+        <td>CUST-002</td>
+        <td>France Foods</td>
+        <td>France</td>
+      </tr>
+      <tr>
+        <td>CUST-003</td>
+        <td>Berlin Supplies</td>
+        <td>Germany</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Note: Rows will become clickable when JavaScript is added.</p>
+</section>
+
+Step 4: Orders table section
+
+Paste:
+
+<section aria-labelledby="orders-title">
+  <h2 id="orders-title">Orders</h2>
+
+  <p><strong id="selectedOrderLabel">Selected order: none</strong></p>
+
+  <table id="ordersTable">
+    <caption>Orders for selected customer</caption>
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody id="ordersTbody">
+      <tr>
+        <td>ORD-1001</td>
+        <td>2026-01-12</td>
+        <td>£123.45</td>
+      </tr>
+      <tr>
+        <td>ORD-1002</td>
+        <td>2026-01-28</td>
+        <td>£89.10</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+Step 5: Order Details section
+
+Paste:
+
+<section aria-labelledby="details-title">
+  <h2 id="details-title">Order Details</h2>
+
+  <div id="orderDetailsPanel">
+    <p>Select an order to see line items.</p>
+
+    <table id="orderDetailsTable">
+      <caption>Line items</caption>
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Unit price</th>
+          <th scope="col">Line total</th>
+        </tr>
+      </thead>
+      <tbody id="orderDetailsTbody">
+        <tr>
+          <td>Example item</td>
+          <td>2</td>
+          <td>£10.00</td>
+          <td>£20.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong id="orderTotalLabel">Order total: £20.00</strong></p>
+  </div>
+</section>
+
+Day 1 Page 2 — about.html
+
+Inside <main>, use this structure:
+
+<main>
+  <section>
+    <h2>What this is</h2>
+    <p>
+      This mini-app displays customers and their orders. Later in the week it will load data
+      from JSON files and update the page dynamically using JavaScript.
+    </p>
+  </section>
+
+  <section>
+    <h2>What you will learn</h2>
+    <ul>
+      <li>Semantic HTML and basic page structure</li>
+      <li>CSS layout and readable UI styling</li>
+      <li>JavaScript DOM manipulation and events</li>
+      <li>Loading JSON data over HTTP (AJAX)</li>
+    </ul>
+  </section>
+</main>
+
+Day 1 Page 3 — contact.html
+
+Inside <main>, paste:
+
+<main>
+  <section>
+    <h2>Send a message</h2>
+
+    <form action="#" method="post">
+      <div>
+        <label for="name">Your name</label><br>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <p>
+      Later in the week, JavaScript can intercept the submit event and show a confirmation message.
+    </p>
+  </section>
+</main>
+
+Day 1 “Done” Checklist (quick marking)
+
+Pages exist and links work (no file not found)
+
+Each page has: doctype + lang + charset + viewport
+
+Correct semantic structure: header/nav/main/footer
+
+Tables have caption, thead, tbody, and th scope="col"
+
+Contact form has labels wired to inputs and uses required + correct input types
+
+aria-current="page" is correct on each page

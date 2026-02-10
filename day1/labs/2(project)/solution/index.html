@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Orders Dashboard</title>
+</head>
+
+<body>
+  <!--
+    DAY 1 GOAL:
+    - Build a professional HTML structure (semantic tags + sensible IDs).
+    - No CSS, no JavaScript yet.
+    - The "static example rows" below will be replaced by JS later in the week.
+  -->
+
+  <header>
+    <h1>Customer Orders Dashboard</h1>
+
+    <!-- Simple multi-page nav to practice relative links -->
+    <nav aria-label="Primary">
+      <a href="index.html" aria-current="page">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Controls: search + counters. Search will become functional on JS days. -->
+    <section aria-labelledby="controls-title">
+      <h2 id="controls-title">Controls</h2>
+
+      <form action="#" method="get">
+        <label for="customerSearch">Search customers</label>
+        <input
+          type="search"
+          id="customerSearch"
+          name="q"
+          placeholder="Type a name or country…"
+          autocomplete="off"
+        >
+
+        <!-- Stretch later: show more button. For now it does nothing. -->
+        <button type="button" id="showMoreBtn" disabled>Show more</button>
+        <button type="button" id="resetBtn" disabled>Reset selection</button>
+      </form>
+
+      <!-- This counter will be updated by JS later (e.g. "11 shown out of 91 total"). -->
+      <p id="customerCounter">
+        <!-- Placeholder text for Day 1 -->
+        Counter: (will be set by JavaScript)
+      </p>
+
+      <!-- Status messages (loading/error/empty) will be written here by JS later. -->
+      <p id="statusMessage" role="status" aria-live="polite">
+        Status: Ready
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- App layout: customers (left) + orders/details (right).
+         On Day 1 this is just semantic grouping; CSS layout comes Day 2. -->
+    <section aria-labelledby="dashboard-title">
+      <h2 id="dashboard-title">Dashboard</h2>
+
+      <!-- Customers -->
+      <section aria-labelledby="customers-title">
+        <h3 id="customers-title">Customers</h3>
+
+        <p>
+          Select a customer to view their orders.
+          <strong id="selectedCustomerLabel">Selected customer: none</strong>
+        </p>
+
+        <table id="customersTable">
+          <caption>Customer list</caption>
+          <thead>
+            <tr>
+              <th scope="col">Customer ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Country</th>
+            </tr>
+          </thead>
+          <tbody id="customersTbody">
+            <!-- DAY 1: Static example rows only -->
+            <tr>
+              <td>CUST-001</td>
+              <td>Acme Trading</td>
+              <td>United Kingdom</td>
+            </tr>
+            <tr>
+              <td>CUST-002</td>
+              <td>France Foods</td>
+              <td>France</td>
+            </tr>
+            <tr>
+              <td>CUST-003</td>
+              <td>Berlin Supplies</td>
+              <td>Germany</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <!-- This will become a clickable instruction with CSS/JS later. -->
+          Note: Rows will become clickable when JavaScript is added.
+        </p>
+      </section>
+
+      <hr>
+
+      <!-- Orders -->
+      <section aria-labelledby="orders-title">
+        <h3 id="orders-title">Orders</h3>
+
+        <p>
+          <strong id="selectedOrderLabel">Selected order: none</strong>
+        </p>
+
+        <table id="ordersTable">
+          <caption>Orders for selected customer</caption>
+          <thead>
+            <tr>
+              <th scope="col">Order ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTbody">
+            <!-- DAY 1: Static example rows only -->
+            <tr>
+              <td>ORD-1001</td>
+              <td>2026-01-12</td>
+              <td>£123.45</td>
+            </tr>
+            <tr>
+              <td>ORD-1002</td>
+              <td>2026-01-28</td>
+              <td>£89.10</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <hr>
+
+      <!-- Order details -->
+      <section aria-labelledby="details-title">
+        <h3 id="details-title">Order Details</h3>
+
+        <div id="orderDetailsPanel">
+          <!-- DAY 1: Placeholder content -->
+          <p>Select an order to see line items.</p>
+
+          <table id="orderDetailsTable">
+            <caption>Line items</caption>
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit price</th>
+                <th scope="col">Line total</th>
+              </tr>
+            </thead>
+            <tbody id="orderDetailsTbody">
+              <tr>
+                <td>Example item</td>
+                <td>2</td>
+                <td>£10.00</td>
+                <td>£20.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong id="orderTotalLabel">Order total: £20.00</strong></p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; 2026 Web Fundamentals</small>
+  </footer>
+</body>
+</html>
