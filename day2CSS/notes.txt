@@ -1,0 +1,23 @@
+CSS:
+
+Three main hooks:
+    element selectors (p, h1)
+        - global, normal style, reseting behaviour.
+        - Production - be mindful of changes when all are affected.
+        - be cautious dont overuse.
+    class selectors(.intro, .btn)
+        - reusable styling hook. 
+        - real world use these.
+        - flexible.
+    ID selectors(#main-title)
+     - unique one per page, inflexible. 
+     - highest priority
+     - overhead in terms of maintainence. 
+
+Design: maintainabilty, scalability, efficiancy. 
+
+Cascade:
+    inline -> ID -> class -> element. 
+
+
+
