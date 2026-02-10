@@ -21,3 +21,39 @@ Cascade:
 
 
 
+Font fallbacks:
+- goes through the list if font isnt found.  
+
+line-height:
+- use modern unitless approach scales with font size well. 
+
+body block:
+- defaults for everything in body. 
+- prevents randomness from browser.
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        margin: 0;
+    }
+
+vars:
+- Store css vars
+- Enforce consistancy.
+- makes wide changes easier. 
+- reduces duplication.
+- switch between themes dark/light
+
+    :root {
+        --text: #222222;
+        --muted: aliceblue;
+        --card: red;
+        --bg: aliceblue;
+        --tbc: blueviolet;
+    }
+
+Box model:
+
+Everything is a box!
+padding = internal space. 

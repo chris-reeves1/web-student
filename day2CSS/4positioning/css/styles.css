@@ -1,0 +1,40 @@
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightgrey;
+}
+
+.page {
+    padding: 24px;
+}
+
+.card {
+ position: relative;
+ max-width: 520px;
+ margin: 0;
+ background: lightcoral;
+ padding: 16px;
+ border-radius: 4px;
+}
+
+.badge{
+    position: absolute;
+    background: darkred;
+    color: floralwhite;
+    padding: 8px;
+    border-radius: 999px;
+    font-size: large;
+    top: -15px;
+    right: -15px;
+
+}
+
+.pill {
+    display: inline-block;
+    background: greenyellow;
+    padding: 8px;
+    border-radius: 999px;
+    margin-left: 12px;
+}

@@ -1,0 +1,62 @@
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightgray;
+}
+
+.wrap{
+    padding: 16px;
+    margin: 0px;
+    /* max-width: 960px; */
+    width: 100%;
+}
+
+.site-header{
+    background: darkslateblue;
+    color: blanchedalmond;
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand {
+    margin: 0;
+    font-size: 20px;
+}
+
+.nav {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-link {
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    background: slategray;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    
+}
+
+.card{
+    flex: 1;
+    background: darkolivegreen;
+    border-radius: 4px;
+    padding: 12px;
+    min-height: 100px;
+}
