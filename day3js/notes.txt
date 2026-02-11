@@ -1,0 +1,28 @@
+what is js?
+
+- language of the web.
+- runs directly in the browser - no downloads or installations.
+- its interpreted.
+- dynamic.
+
+Frontend:
+- from validation
+- real time changes
+- interactive ui 
+
+Backend:
+- node.js
+- api's, databases, authentication, business logic. 
+
+mobile + desktop (react, electron, game dev, scripting)
+
+1. vars + data types
+2. fucntions
+3. objects/arrays
+4. loops/conditionsals
+
+5. DOM, Events
+6. fetching data.
+7. Async (promises/await)
+
+8. Framework (react)
