@@ -57,3 +57,13 @@ Box model:
 
 Everything is a box!
 padding = internal space. 
+
+
+html - semantics (head, nav, main, footer), headers, tables , forms etc
+     - add hooks. classes for components for styling. id's for js. 
+
+css - globals (defaults), major layout (flexbox).
+    - styling components - cards, forms, buttons, inputs.
+    - state - focus, hover, highlights.
+    - Refactor.  
+
