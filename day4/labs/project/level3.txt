@@ -1,0 +1,16 @@
+Level 3 — Challenge Mode
+
+What you are building
+Same outcome + render the updated orders + ooder details tables, also add one extra 
+enhancement of your choice:
+
+
+sorting (A–Z by CompanyName)
+Highlight matching text in the table
+Add a “clear search” button that appears only when search has text
+
+
+Definition of Done:
+
+Level 1 done + at least one of table. 
+Enhancement works and does not break filtering. 

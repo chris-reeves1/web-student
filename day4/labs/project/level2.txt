@@ -1,0 +1,23 @@
+Level 2 — Real-World Guided (more structured, cleaner)
+
+What you are building:
+Same outcome as Level 1, but with clean structure:
+    A state object for query
+    No innerHTML += inside loops (prefer DOM creation)
+    Clear separation:
+        getFilteredCustomers()
+        renderCustomers(customers)
+        updateCounter(shown, total)
+
+Definition of Done:
+Everything in Level 1 plus:
+    No code duplication (counter update is in one function)
+    Search does not break if customer fields are missing (use String(x || ""))
+
+Suggested approach:
+
+const state = { query: "" };
+On input, update state.query, then:
+    const filtered = getFilteredCustomers();
+    renderCustomers(filtered);
+    updateCounter(filtered.length, CUSTOMERS.length);
