@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Orders Dashboard</title>
+
+  <!-- DAY 2: External stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Customer Orders Dashboard</h1>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link is-active" href="index.html" aria-current="page">Dashboard</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="controls-title">
+      <div class="card-header">
+        <h2 id="controls-title" class="card-title">Controls</h2>
+        <p class="muted">Day 2: Styled UI. JavaScript comes later.</p>
+      </div>
+
+      <form class="controls" action="#" method="get">
+        <div class="field">
+          <label class="label" for="customerSearch">Search customers</label>
+          <input class="input" type="search" id="customerSearch" name="q"
+                 placeholder="Type a name or country…" autocomplete="off">
+        </div>
+
+        <div class="buttons">
+          <!-- <button class="btn" type="button" id="showMoreBtn" disabled>Show more</button> -->
+          <button class="btn btn-secondary" type="button" id="resetBtn" disabled>Reset selection</button>
+        </div>
+      </form>
+
+      <div class="status-row">
+        <p id="customerCounter" class="counter">Counter: (will be set by JavaScript)</p>
+        <p id="statusMessage" class="status" role="status" aria-live="polite">Status: Ready</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- Customers -->
+      <section class="card" aria-labelledby="customers-title">
+        <div class="card-header">
+          <h2 id="customers-title" class="card-title">Customers</h2>
+          <p class="muted"><strong id="selectedCustomerLabel">Selected: none</strong></p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="customersTable">
+            <thead>
+              <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody id="customersTbody">
+              <!-- Static example rows; later JS will render these and add click behaviour -->
+              <tr class="row is-clickable">
+                <td>CUST-001</td>
+                <td>Acme Trading</td>
+                <td>United Kingdom</td>
+              </tr>
+              <tr class="row is-clickable">
+                <td>CUST-002</td>
+                <td>France Foods</td>
+                <td>France</td>
+              </tr>
+              <tr class="row is-clickable">
+                <td>CUST-003</td>
+                <td>Berlin Supplies</td>
+                <td>Germany</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="hint">Rows will become clickable when JavaScript is added.</p>
+      </section>
+
+      <!-- Orders + details -->
+      <section class="stack">
+        <section class="card" aria-labelledby="orders-title">
+          <div class="card-header">
+            <h2 id="orders-title" class="card-title">Orders</h2>
+            <p class="muted"><strong id="selectedOrderLabel">Selected: none</strong></p>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" id="ordersTable">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th class="right">Total</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTbody">
+                <tr class="row is-clickable">
+                  <td>ORD-1001</td>
+                  <td>2026-01-12</td>
+                  <td class="right">£123.45</td>
+                </tr>
+                <tr class="row is-clickable">
+                  <td>ORD-1002</td>
+                  <td>2026-01-28</td>
+                  <td class="right">£89.10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="hint">Clicking orders will show details later.</p>
+        </section>
+
+        <section class="card" aria-labelledby="details-title">
+          <div class="card-header">
+            <h2 id="details-title" class="card-title">Order Details</h2>
+            <p class="muted">Line items and totals</p>
+          </div>
+
+          <div id="orderDetailsPanel">
+            <p class="muted">Select an order to see line items.</p>
+
+            <div class="table-wrap">
+              <table class="table" id="orderDetailsTable">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th class="right">Qty</th>
+                    <th class="right">Unit</th>
+                    <th class="right">Line</th>
+                  </tr>
+                </thead>
+                <tbody id="orderDetailsTbody">
+                  <tr>
+                    <td>Example item</td>
+                    <td class="right">2</td>
+                    <td class="right">£10.00</td>
+                    <td class="right">£20.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="total"><strong id="orderTotalLabel">Order total: £20.00</strong></p>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2026 Web Fundamentals</small>
+    </div>
+  </footer>
+  <script src="js/app-day3.js" defer></script>
+</body>
+</html>

@@ -21,3 +21,122 @@ On input, update state.query, then:
     const filtered = getFilteredCustomers();
     renderCustomers(filtered);
     updateCounter(filtered.length, CUSTOMERS.length);
+
+"use strict";
+
+/* ----------------------------- Sample data ----------------------------- */
+
+const SAMPLE_CUSTOMERS = [
+  { CustomerID: "ALFKI", CompanyName: "Alfreds Futterkiste", Country: "Germany" },
+  { CustomerID: "ANATR", CompanyName: "Ana Trujillo Emparedados", Country: "Mexico" },
+  { CustomerID: "AROUT", CompanyName: "Around the Horn", Country: "United Kingdom" },
+  { CustomerID: "BONAP", CompanyName: "Bon app'", Country: "France" },
+  { CustomerID: "BSBEV", CompanyName: "B's Beverages", Country: "United Kingdom" },
+  { CustomerID: "FRANK", CompanyName: "Frankenversand", Country: "Germany" },
+  { CustomerID: "VINET", CompanyName: "Vins et alcools Chevalier", Country: "France" },
+];
+
+/* ----------------------------- DOM bindings ---------------------------- */
+
+const el = {
+  customersTbody: document.getElementById("customersTbody"),
+  customerSearch: document.getElementById("customerSearch"),
+  customerCounter: document.getElementById("customerCounter"),
+  statusMessage: document.getElementById("statusMessage"),
+};
+
+const state = {
+  query: "",
+};
+
+/* ----------------------------- Entry point ----------------------------- */
+
+document.addEventListener("DOMContentLoaded", () => {
+  guardRequiredElements();
+
+  // Initial render (no filter)
+  renderCustomers(SAMPLE_CUSTOMERS);
+  updateCounter(SAMPLE_CUSTOMERS.length, SAMPLE_CUSTOMERS.length);
+  setStatus("Ready (Day 3: customers + search)", "info");
+
+  // Live search
+  el.customerSearch.addEventListener("input", () => {
+    state.query = el.customerSearch.value.trim().toLowerCase();
+    const filtered = filterCustomers(SAMPLE_CUSTOMERS, state.query);
+
+    renderCustomers(filtered);
+    updateCounter(filtered.length, SAMPLE_CUSTOMERS.length);
+
+    setStatus(state.query ? "Filtered customers." : "Ready.", "info");
+  });
+});
+
+/* ------------------------------ Guards -------------------------------- */
+
+function guardRequiredElements() {
+  const required = [
+    ["customersTbody", el.customersTbody],
+    ["customerSearch", el.customerSearch],
+    ["customerCounter", el.customerCounter],
+    ["statusMessage", el.statusMessage],
+  ];
+
+  for (const [name, node] of required) {
+    if (!node) throw new Error(`Missing required element: #${name} (check index.html IDs)`);
+  }
+}
+
+/* ------------------------------ Rendering ------------------------------ */
+
+function renderCustomers(customers) {
+  el.customersTbody.textContent = "";
+
+  if (customers.length === 0) {
+    el.customersTbody.innerHTML = `<tr><td colspan="3">No customers match your search.</td></tr>`;
+    return;
+  }
+
+  for (const c of customers) {
+    const tr = document.createElement("tr");
+    tr.className = "row is-clickable"; // keeps your existing hover style
+
+    tr.appendChild(td(c.CustomerID));
+    tr.appendChild(td(c.CompanyName));
+    tr.appendChild(td(c.Country));
+
+    el.customersTbody.appendChild(tr);
+  }
+}
+
+/* ------------------------------ Filtering ------------------------------ */
+
+function filterCustomers(customers, query) {
+  if (!query) return customers;
+
+  return customers.filter((c) => {
+    const id = String(c.CustomerID).toLowerCase();
+    const name = String(c.CompanyName).toLowerCase();
+    const country = String(c.Country).toLowerCase();
+
+    return id.includes(query) || name.includes(query) || country.includes(query);
+  });
+}
+
+/* ------------------------------ UI helpers ----------------------------- */
+
+function updateCounter(shown, total) {
+  el.customerCounter.textContent = `${shown} shown out of ${total} total`;
+}
+
+function setStatus(message, level) {
+  el.statusMessage.textContent = message;
+  el.statusMessage.dataset.level = level;
+}
+
+/* ------------------------------ DOM helper ----------------------------- */
+
+function td(text) {
+  const cell = document.createElement("td");
+  cell.textContent = text;
+  return cell;
+}

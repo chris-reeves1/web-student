@@ -70,3 +70,74 @@ Add an input event listener to the search box:
 
 Wire it up with:
 document.addEventListener("DOMContentLoaded", init);
+
+
+simple solution:
+"use strict";
+
+/* 1) Data (in-memory, no JSON yet) */
+const CUSTOMERS = [
+  { CustomerID: "ALFKI", CompanyName: "Alfreds Futterkiste", Country: "Germany" },
+  { CustomerID: "ANATR", CompanyName: "Ana Trujillo Emparedados", Country: "Mexico" },
+  { CustomerID: "AROUT", CompanyName: "Around the Horn", Country: "United Kingdom" },
+  { CustomerID: "BONAP", CompanyName: "Bon app'", Country: "France" },
+  { CustomerID: "BSBEV", CompanyName: "B's Beverages", Country: "United Kingdom" },
+  { CustomerID: "FRANK", CompanyName: "Frankenversand", Country: "Germany" },
+  { CustomerID: "VINET", CompanyName: "Vins et alcools Chevalier", Country: "France" },
+];
+
+/* 2) Entry point */
+function init() {
+  const tbody = document.getElementById("customersTbody");
+  const search = document.getElementById("customerSearch");
+  const counter = document.getElementById("customerCounter");
+
+  // initial render
+  renderCustomers(tbody, CUSTOMERS);
+  counter.textContent = `${CUSTOMERS.length} shown out of ${CUSTOMERS.length} total`;
+
+  // live search
+  search.addEventListener("input", () => {
+    const query = search.value.trim().toLowerCase();
+    const filtered = filterCustomers(CUSTOMERS, query);
+
+    renderCustomers(tbody, filtered);
+    counter.textContent = `${filtered.length} shown out of ${CUSTOMERS.length} total`;
+  });
+}
+
+/* 3) Render */
+function renderCustomers(tbody, customers) {
+  tbody.innerHTML = "";
+
+  if (customers.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="3">No customers match your search.</td></tr>`;
+    return;
+  }
+
+  for (const c of customers) {
+    tbody.innerHTML += `
+      <tr class="row is-clickable">
+        <td>${c.CustomerID}</td>
+        <td>${c.CompanyName}</td>
+        <td>${c.Country}</td>
+      </tr>
+    `;
+  }
+}
+
+/* 4) Filter */
+function filterCustomers(customers, query) {
+  if (!query) return customers;
+
+  return customers.filter((c) => {
+    const id = c.CustomerID.toLowerCase();
+    const name = c.CompanyName.toLowerCase();
+    const country = c.Country.toLowerCase();
+    return id.includes(query) || name.includes(query) || country.includes(query);
+  });
+}
+
+/* Start */
+document.addEventListener("DOMContentLoaded", init);
+

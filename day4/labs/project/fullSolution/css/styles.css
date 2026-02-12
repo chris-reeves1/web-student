@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Day 2 Stylesheet
+   Goal: simple, readable, professional baseline styling (no frameworks).
+   ========================================================================== */
+
+/* --- Basic reset / baseline --- */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background: #f6f7f9;
+}
+
+/* --- Layout helpers --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* --- Header / nav --- */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e8ee;
+}
+
+.header-inner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #111;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  border-color: #d7dbe6;
+  background: #f3f5fa;
+}
+
+.nav-link.is-active {
+  background: #eef2ff;
+  border-color: #cfd6ff;
+}
+
+/* --- Cards --- */
+.card {
+  background: #ffffff;
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 0 16px 0;
+}
+
+.card-header {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.muted {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* --- Controls --- */
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 260px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #cfd3dd;
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+.input:focus {
+  outline: 3px solid #cfe0ff;
+  border-color: #7aa7ff;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cfd3dd;
+  background: #ffffff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.btn:hover { background: #f3f5fa; }
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn.btn-secondary {
+  background: #f7f8fb;
+}
+
+.status-row {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eef0f5;
+}
+
+.counter {
+  margin: 0;
+  font-weight: 600;
+}
+
+.status {
+  margin: 0;
+  color: #333;
+}
+
+/* --- Dashboard grid --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 16px;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* --- Tables --- */
+.table-wrap {
+  width: 100%;
+  overflow: auto;
+  border-radius: 10px;
+  border: 1px solid #eef0f5;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px; /* keeps columns readable; scroll container handles overflow */
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef0f5;
+}
+
+.table thead th {
+  background: #f7f8fb;
+  font-weight: 700;
+}
+
+.right {
+  text-align: right;
+}
+
+.row.is-clickable {
+  cursor: pointer;
+}
+
+.row.is-clickable:hover {
+  background: #f3f5fa;
+}
+
+.hint {
+  margin: 10px 0 0 0;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.total {
+  margin: 12px 0 0 0;
+  font-size: 1.0rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid #e6e8ee;
+  background: #ffffff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; }
+  .table { min-width: 0; }
+}
+
+/* Interactive row clarity */
+.row.is-clickable { cursor: pointer; }
+
+/* Selected row highlight */
+.row.is-selected {
+  background: #eef2ff;
+  outline: 2px solid #cfd6ff;
+  outline-offset: -2px;
+}
+
+/* Make keyboard focus visible (we add tabindex in JS) */
+.row.is-clickable:focus {
+  outline: 3px solid #cfe0ff;
+  outline-offset: -3px;
+}
