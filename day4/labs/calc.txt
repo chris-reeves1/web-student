@@ -1,0 +1,174 @@
+Student Brief — Mini Project: Online Calculator (HTML + CSS + JS)
+Goal
+
+Build a working “Online Calculator” web page that:
+
+takes two numbers
+
+lets the user choose an operator (+, −, ×, ÷)
+
+shows the result on the page when the user clicks Calculate
+
+handles invalid input and division by zero safely
+
+This project is about the core web workflow:
+HTML hooks → JS selects elements → event listener → read/validate/compute → update DOM.
+
+Deliverables
+
+Create a folder called calculator/ containing:
+
+index.html
+
+styles.css
+
+script.js
+
+When opened in a browser, the calculator should work with no errors in the console.
+
+Constraints (important)
+
+No inline JS (no onclick="" in HTML)
+
+JS must be in script.js and loaded with a <script src="script.js"></script> tag
+
+Use the given IDs exactly (firstNumber, secondNumber, operator, calculate, result)
+
+Output must update by changing textContent of the result paragraph
+
+Step-by-step instructions
+Step 1 — Create the HTML structure (index.html)
+
+Create the basic page structure (<!DOCTYPE html>, <head>, <body>).
+
+Add a container <div class="container">.
+
+Inside it, add:
+
+<h1>Online Calculator</h1>
+
+first <input type="number" id="firstNumber">
+
+<select id="operator"> with options +, -, *, /
+
+second <input type="number" id="secondNumber">
+
+<button id="calculate">Calculate</button>
+
+<p id="result">Result will be displayed here</p>
+
+Link your CSS in the <head>:
+
+<link rel="stylesheet" href="styles.css" />
+
+Load your JS at the end of <body>:
+
+<script src="script.js"></script>
+
+✅ Checkpoint: Page loads and shows form controls, even if it doesn’t “calculate” yet.
+
+Step 2 — Style the page (styles.css)
+
+Your aim:
+
+centre the calculator on the page
+
+make it look like a card
+
+give inputs consistent padding and spacing
+
+make the button look clickable
+
+make the result area visible
+
+✅ Checkpoint: Your calculator is centred, readable, and looks like a UI—not raw HTML.
+
+Step 3 — Wire up DOM hooks (script.js)
+
+In script.js, your first job is to select the elements you need (DOM hooks):
+
+first number input
+
+second number input
+
+operator select
+
+calculate button
+
+result paragraph
+
+✅ Checkpoint: console.log(...) each variable and confirm it prints the element (not null).
+
+Step 4 — Add the event listener
+
+Your calculator should only run when the user clicks Calculate.
+
+Add a "click" event listener to the button.
+
+When clicked, call a function called calculate().
+
+✅ Checkpoint: Clicking the button triggers your handler (prove it with a console.log("clicked")).
+
+Step 5 — Implement calculate(): read → validate → compute → write
+
+Inside calculate():
+
+A) Read values
+
+Read firstNumberInput.value and secondNumberInput.value
+
+Convert them to numbers using parseFloat(...)
+
+B) Validate inputs
+
+If either number is NaN → show:
+
+"Please enter a valid number"
+
+then return
+
+C) Compute using the operator
+
+Use switch (operator):
+
++ → add
+
+- → subtract
+
+* → multiply
+
+/ → divide
+
+but if second number is 0, show:
+
+"Division by zero is not allowed"
+
+then return
+
+D) Write result back to the DOM
+
+Update the paragraph:
+
+resultParagraph.textContent = "Result: " + result;
+
+✅ Checkpoint: You can calculate 5+5, 10-3, 4*6, 10/2 correctly.
+
+Required behaviour tests (you must pass these)
+
+Valid numbers
+
+2 + 3 → Result: 5
+
+10 / 4 → Result: 2.5
+
+Invalid input
+
+leave one blank → shows “Please enter a valid number”
+
+Division by zero
+
+10 / 0 → shows “Division by zero is not allowed”
+
+No console errors
+
+Open DevTools → Console must be clean (no red errors)

@@ -45,3 +45,32 @@ box-shadow: 0 0 0 3px rgba(0,123,255,0.5);
     color: #777;
     line-height: 1.5;
 }
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+input { 
+width: 100%; 
+padding: 8px; 
+margin-top: 4px; 
+border: 1px solid #ccc; 
+border-radius: 4px;
+}
+
+input:focus {
+border-color: #007BFF; 
+box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.pad {
+    display: flex;
+    gap: 10px; 
+    flex-wrap: wrap;
+
+}
+
+.pad button { 
+    min-width: 30px; }

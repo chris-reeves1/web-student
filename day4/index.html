@@ -21,6 +21,59 @@
             <button id="d1-btn">Change text</button>
         </section>
 
+        <hr>
+
+        <section class="panel">
+            <h2>Demo2 - Read, validate, return</h2>
+
+            <label for="d2-a">First number</label>
+            <input id="d2-a" type="text" inputmode="numeric" placeholder="eg; 10">
+
+            <label for="d2-b">Second number</label>
+            <input id="d2-b" type="text" inputmode="numeric" placeholder="eg; 10">
+
+            <button id="d2-add" type="button">ADD</button>
+
+            <p id="d2-result" class="muted">Result will be shown here</p>
+
+        </section>
+
+        <hr>
+
+        <section class="panel">
+            <h2>Demo-3 live typing</h2>
+            <label for="d3-text">type something...</label>
+            <input id="d3-text" type="text" placeholder="type something here">
+            <p>live text: <span id="d3-live">(empty)</span></p>
+        </section>
+
+        <hr>
+
+        <section class="panel">
+            <h2>Demo-4 Event delegation</h2>
+            <div id="d4-pad" class="pad">
+                    <button type="button" data-op="+">+</button>
+                    <button type="button" data-op="-">-</button>
+                    <button type="button" data-op="*">*</button>
+                    <button type="button" data-op="/">/</button>
+                    <button type="button" data-op="//">//</button>
+                    <button type="button" data-op="%"><span>%</span></button>
+            </div>
+            <p id="d4-out">click a button</p>
+        </section>
+
+        <br>
+
+        <!-- Demo 5: Create elements -->
+    <section class="panel">
+        <h2 id="d5-title">Demo 5 — Create and append elements</h2>
+  
+        <label for="d5-item">New list item</label>
+        <input id="d5-item" type="text" placeholder="e.g. Milk" />
+        <button id="d5-add" type="button">Add item</button>
+  
+        <ul id="d5-list"></ul>
+      </section>
 
     </main>
 </body>
