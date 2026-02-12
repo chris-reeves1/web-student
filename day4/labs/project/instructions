@@ -1,0 +1,16 @@
+Day 3 (JavaScript) — Choose Your Level
+
+Goal (everyone):
+Use a single in-memory dataset (customers) to:
+
+Render customers into the Customers table
+Filter the table using the Search box (live as you type)
+Update the counter: X shown out of Y total
+
+No JSON / no AJAX today. Data lives in the JS file.
+
+Your HTML must already contain these IDs (it will if you use day 2 soultion index.html)
+customerSearch (the search <input>)
+customerCounter (the counter <p>)
+customersTbody (the <tbody> you will fill)
+

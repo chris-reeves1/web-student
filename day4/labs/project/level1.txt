@@ -1,0 +1,72 @@
+Level 1 — Simple Guided
+
+What you are building:
+A CUSTOMERS array in JS
+A function that draws rows into #customersTbody
+A function that filters customers based on a search string
+An init() that wires everything up
+
+Definition of Done:
+Page loads and shows all customers in the table
+Typing “france” filters the table
+Counter updates correctly every time you type
+
+Step-by-step:
+
+Create: js/app-day3.js and add your script tag in index.html.
+
+Step 1 — Create the data (write it or copy from samle_data_js)
+
+Create an array with at least 7 customers:
+
+const CUSTOMERS = [
+  { CustomerID: "ALFKI", CompanyName: "Alfreds Futterkiste", Country: "Germany" },
+  // add at least 6 more
+];
+
+Step 2 — Get the elements
+
+Create variables for the three elements:
+customersTbody
+customerSearch
+customerCounter
+
+Use document.getElementById(...).
+
+Step 3 — Write renderCustomers(customers) 
+
+Rules:
+Clears the table first
+Adds 1 <tr> per customer
+Each row must have 3 <td> cells: ID, Name, Country
+
+If customers.length === 0, show a single row: “No customers match your search.” spanning 3 columns
+
+Hint:
+customersTbody.innerHTML = "";
+
+
+Step 4 — Write filterCustomers(query) 
+
+Rules:
+Returns all customers if query is blank
+Otherwise match if query appears in:
+CustomerID
+CompanyName
+Country
+
+Must be case-insensitive (use .toLowerCase())
+
+Step 5 — Write init() 
+
+Rules:
+On page load: renderCustomers(CUSTOMERS)
+Set the counter: X shown out of Y total
+Add an input event listener to the search box:
+    Read search.value
+    Filter
+    Render filtered
+    Update counter
+
+Wire it up with:
+document.addEventListener("DOMContentLoaded", init);
