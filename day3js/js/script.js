@@ -140,26 +140,49 @@
 //     console.log("Grade: F");
 // }
 
-let op = "+";
-switch (op) {
-    case "+":
-        console.log("Addition");
-        break;
-    case "-":
-        console.log("Subtraction");
-        break;
-    case "*":
-        console.log("Multiplication");
-        break;
-    case "/":
-        console.log("Division");
-       break;
-    default:
-        console.log("Invalid operator");
-}  
+// let op = "+";
+// switch (op) {
+//     case "+":
+//         console.log("Addition");
+//         break;
+//     case "-":
+//         console.log("Subtraction");
+//         break;
+//     case "*":
+//         console.log("Multiplication");
+//         break;
+//     case "/":
+//         console.log("Division");
+//        break;
+//     default:
+//         console.log("Invalid operator");
+//}  
 
+// functions
 
+// function greet() {
+//     console.log("Hello")
+// } // () = params. 
 
+// greet();
+
+// function sayHello(name) { console.log("Hello, " + name); }
+
+// sayHello();
+
+// function add(a, b) {return a + b; }
+
+// let result = add(5, 3);
+// console.log(result);
+
+// const multiply = (x, y) => x * y; // arrow function
+// // () needed if no args or 2+ agrs.
+// // () not needed for single arg.
+
+// console.log(multiply(4, 5));
+
+// const square = (x) => x * x;
+// console.log(square(6));
 
 
 

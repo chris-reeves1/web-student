@@ -1,0 +1,76 @@
+/* DOM demo page */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #222;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.panel {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  margin: 16px 0;
+}
+
+/* label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+input:focus {
+  border-color: dodgerblue;
+  outline: 2px solid rgba(30, 144, 255, 0.25);
+  outline-offset: 1px;
+} */
+
+button {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: dodgerblue;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(0.95); }
+
+button:focus {
+  outline: 2px solid rgba(30, 144, 255, 0.35);
+  outline-offset: 2px;
+}
+
+.muted {
+  color: #555;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* .pad {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pad button {
+  min-width: 44px;
+} */
