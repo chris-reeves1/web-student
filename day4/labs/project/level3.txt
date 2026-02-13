@@ -8,6 +8,8 @@ enhancement of your choice:
 sorting (A–Z by CompanyName)
 Highlight matching text in the table
 Add a “clear search” button that appears only when search has text
+show with a limit
+have a show more button. 
 
 
 Definition of Done:
